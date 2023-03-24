@@ -21,7 +21,7 @@ L’output del prezzo finale va messo fuori in forma umana (con massimo due deci
 - Ho moltiplicato il prezzo al km per i km inseriti dall'utente;
 
 ## Fourth Step
-- Ho calcolato lo sconto moltiplicando la percentuale al prezzo del biglietto per km e inserito le variabili all'interno di due condizioni: età inferiore a 18 anni oppure età maggiore a 65 anni.
+- Ho calcolato lo sconto moltiplicando la percentuale al prezzo del biglietto per km e inserito le variabili all'interno di due condizioni: età inferiore a 18 anni, età maggiore a 65 anni.
 
 ## Fifth Step
 - 

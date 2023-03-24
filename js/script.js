@@ -1,31 +1,55 @@
-//FIRST and SECOND STEP
-const km = prompt("Quanti km vuoi percorrere?",20);
-const age = prompt("Quanti anni hai?");
+//CHIEDERE ALL'UTENTE I KM CHE VUOLE PERCORRERE E LA SUA ETA'
+const km = prompt('inserisci i km che vuoi percorrere')
+const age = prompt('inserisci la tua età')
+console.log('km', 'age')
+const name = prompt('inserisci il tuo nome');
+console.log('name')
 
-console.log( km, age );
+//PREZZO TOTALE DEL VIAGGIO
+const price = 0.21;
+console.log(price);
+const totalPrice = (price * km);
 
-//THIRD STEP
-let price = ( 0.21 * km );
-console.log( price)
+//SCONTISTICA
 
-//FOURTH STEP
+//UNDER18
+const discount20 =  (20/100) * totalPrice;
+console.log(discount20)
 
-//DISCOUNT
-if (age < 18){
-  let discount20 =( 20 * price / 100 );
-  console.log( discount20 );
-}else if (age > 65){
-  let discount40 = ( 40 * price / 100);
-  console.log( discount40 );
+const under18 = totalPrice - discount20;
+console.log(under18)
+
+
+//OVER65
+const discount40 = (40/100) * totalPrice;
+console.log(discount40)
+
+const over65 = totalPrice - discount40;
+console.log(over65)
+
+
+let ticket="";
+//CONDIZIONE
+if(age < 18){
+  ticket = under18;
+  document.getElementById('young').innerHTML = `
+  Ciao ${name}, <br> hai diritto a uno sconto del 20%! <br> Spenderai ${under18} anziché ${totalPrice}
+  `
+}else if ( age > 18 && age <65){
+  ticket = totalPrice;
+  document.getElementById('age-range').innerHTML = `
+  Ciao ${name}, il prezzo del tuo biglietto è di  ${totalPrice}.
+  `
 }
 
-//FINAL PRICE
-//FINAL PRICE UNDER 18
-/*if (price == discount20){
-  let under18discount = ( price - discount20 )
-console.log (under18discount);
+if(age > 65){
+  ticket = over65;
+  document.getElementById('senior').innerHTML = `
+  Ciao ${name}, <br> hai diritto a uno sconto del 40%! <br> Spenderai ${over65} anziché ${totalPrice}
+  `
 }
 
-//FINAL PRICE OVER 65
-let over65discount = ( price - discount40 )
-console.log (over65discount);*/
+
+
+
+
